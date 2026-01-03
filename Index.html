@@ -1,105 +1,111 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
-<html>
+<!DOCTYPE html>
+<html lang="ru">
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-  <meta http-equiv="Content-Style-Type" content="text/css">
-  <title></title>
-  <meta name="Generator" content="Cocoa HTML Writer">
-  <meta name="CocoaVersion" content="2575.7">
-  <style type="text/css">
-    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Times; -webkit-text-stroke: #000000}
-    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Times; -webkit-text-stroke: #000000; min-height: 14.0px}
-    span.s1 {font-kerning: none}
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Витражи</title>
+    <style>
+        /* Стиль фона и газетного листа */
+        body {
+            background-color: #f4ecd8; /* Цвет старой бумаги */
+            font-family: "Times New Roman", serif;
+            display: flex;
+            justify-content: center;
+            padding: 20px;
+            margin: 0;
+        }
+
+        .paper {
+            max-width: 900px;
+            background: #dfd3c3;
+            padding: 40px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.2);
+            border: 1px solid #c4b5a2;
+        }
+
+        h1 {
+            text-align: center;
+            font-size: clamp(40px, 8vw, 70px);
+            text-transform: uppercase;
+            border-bottom: 5px double #2c2c2c;
+            margin-bottom: 20px;
+            letter-spacing: 2px;
+        }
+
+        /* Две колонки как в настоящей газете */
+        .columns {
+            column-count: 2;
+            column-gap: 30px;
+            column-rule: 1px solid #a3937b;
+        }
+
+        /* Контейнер для "живого фото" */
+        .live-photo {
+            float: left; /* Текст обтекает видео */
+            width: 200px;
+            height: 150px;
+            margin: 5px 15px 10px 0;
+            border: 4px solid #333;
+            background: #000;
+            overflow: hidden;
+            filter: sepia(0.5) contrast(1.2); /* Эффект старой пленки */
+        }
+
+        video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        p {
+            margin: 0 0 15px 0;
+            line-height: 1.4;
+            text-align: justify;
+        }
+    </style>
 </head>
 <body>
-<p class="p1"><span class="s1">&lt;!DOCTYPE html&gt;</span></p>
-<p class="p1"><span class="s1">&lt;html lang="ru"&gt;</span></p>
-<p class="p1"><span class="s1">&lt;head&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;meta charset="UTF-8"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;title&gt;Ежедневный Пророк&lt;/title&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;style&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>body {</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>background-color: #dfd3c3; /* Цвет старой бумаги */</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>font-family: "Times New Roman", serif;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>padding: 40px;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>color: #2c2c2c;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.newspaper-container {</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>max-width: 800px;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>margin: 0 auto;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>column-count: 2; /* Газетные колонки */</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>column-gap: 40px;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>column-rule: 1px solid #a3937b;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>h1 {</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>grid-column: 1 / -1;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>text-align: center;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>font-size: 60px;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>text-transform: uppercase;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>border-bottom: 4px double #2c2c2c;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>margin-bottom: 20px;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>letter-spacing: 5px;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>/* Контейнер для видео в начале параграфа */</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.live-photo-container {</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>float: left; /* Обтекание текстом */</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>width: 250px;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>height: 200px;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>margin: 10px 20px 10px 0;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>shape-outside: inset(0); /* Текст "видит" границы видео */</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>border: 5px solid #2c2c2c;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>box-shadow: 2px 2px 10px rgba(0,0,0,0.3);</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>overflow: hidden;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>filter: sepia(0.6) contrast(1.2) brightness(0.9); /* Эффект старины */</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>video {</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>width: 100%;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>height: 100%;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>object-fit: cover;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>p {</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>line-height: 1.5;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>text-align: justify;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>margin-top: 0;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>p::first-letter {</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>font-size: 30px;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>font-weight: bold;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;/style&gt;</span></p>
-<p class="p1"><span class="s1">&lt;/head&gt;</span></p>
-<p class="p1"><span class="s1">&lt;body&gt;</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;h1&gt;The Daily Prophet&lt;/h1&gt;</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;div class="newspaper-container"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;p&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;div class="live-photo-container"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;!-- Вставьте ссылку на ваше видео здесь --&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;video autoplay muted loop playsinline&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;source src="www.w3schools.com" type="video/mp4"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;/video&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>Сириус Блэк все еще на свободе! Сегодня министерство магии подтвердило, что самый опасный преступник столетия был замечен в окрестностях Хогсмида. Магическое сообщество призывают к предельной осторожности. Не пытайтесь заговорить с ним, используйте дементоров при первой возможности. Корнелиус Фадж лично курирует операцию по поимке беглеца.</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;/p&gt;</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;p&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>Тем временем, в Хогвартсе начался учебный год. Альбус Дамблдор заверил родителей, что школа находится под надежной защитой. Однако многие обеспокоены присутствием дементоров на территории школы. "Они высасывают радость из каждого угла", — жалуется один из студентов, пожелавший остаться анонимным.<span class="Apple-converted-space"> </span></span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;/p&gt;</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;p&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>Министерство магии напоминает: укрывательство преступников карается пожизненным заключением в Азкабане. Если вы обладаете какой-либо информацией, немедленно свяжитесь с отделом магического правопорядка. Помните, безопасность магического Лондона в ваших руках.</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;/p&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1">&lt;/body&gt;</span></p>
-<p class="p1"><span class="s1">&lt;/html&gt;</span></p>
+
+<div class="paper">
+    <h1>The Daily Prophet</h1>
+    
+    <div class="columns">
+        <p>
+            <span class="live-photo">
+                <!-- Прямая ссылка на тестовое видео. Замените на свое. -->
+                <video autoplay muted loop playsinline>
+                    <source src="p_01.mp4" type="video/mp4">
+                </video>
+            </span>
+            <b>Глава 1</b>
+        </p>
+        
+        <p>
+Шумные улицы города стали потихоньку смолкать, зажигались фонари, звезды отчетливее проявлялись на небе. Иногда тучи заслоняли небесные светила, и маленькому Гансу требовался фонарик, чтобы в его комнате было не слишком темно и страшно. Мальчик лепил солдатиков из украденной в школе глины. Он расставлял их на подоконнике и дожидался, пока они высохнут, а потом разукрашивал. Злые солдатики были всегда в бордовой форме, а добрые - в серой. Ганс аккуратно выстраивал их ровными рядами на подоконнике, бросая иногда тоскливый взгляд на улицу, где дети возвращались со своими родителями с ледовых катков, а кто-то мастерил снеговиков или играл в снежки. 
+-Ужинать!- раздался из гостинной комнаты грозный голос дяди Фредрика.
+Ганс тяжело вздохнул, от чего стекло запотело, скрывая заснеженную улицу. Мальчик медленно направился на кухню.
+-Ты датский король?! Почему мы с тетей должны тебя так долго ждать?- закричал на него дядя Фредрик, когда Ганс сел за стол.
+За годы, проведенные в этом доме, мальчик понял, что порой лучше промолчать, поэтому ничего не ответил.
+-Ты всегда был неблагодарным! – упрекнул его дядя Фредрик.
+Ганс закрыл глаза и на секунду представил, как его серые солдатики атакуют бордовых, как он ведет их вперед сражаться, и они побеждают, принимают поздравления. На губах мальчика появилась улыбка.
+-Чего улыбаешься?- подозрительно спросил дядя Фредрик.
+-Я?- испуганно произнес Ганс. 
+Это была неосознанная улыбка, по-другому бывало слишком редко.
+-Ешь,- сказала тетя Генриетта, поставив перед Гансом тарелку с ужином.
+Мальчик медленно ковырял в тарелке вилкой. Ему никогда не нравилось, как готовит тетя: еда была слишком жирной и соленой. Но она нравилась дяде Фредрику. Ганс не любил бобовые, но семья Хольмберг их ела каждый день. И ему через силу приходилось заставлять себя съесть хоть половину своей порции, иначе дядя Фредрик бы сильно разозлился. Не обращая внимания на Ганса, муж с женой разговаривали о своих семейных делах. Воспользовавшись этим, мальчик спрыгнул со стула, быстро поблагодарил за ужин и выкинул оставшуюся половину порции коту Гензелю. Кот тихо зашипел - он любил только тетю Генриетту. Остальным же частенько доставалось от него. У Ганса все ноги были в шрамах от когтей Гензеля. Дядя Фредрик порывался несколько раз выкинуть кота на улицу, но тетя Генриетта не позволяла.
+-Тссс,- приложив палец к губам и молящими глазами смотря на Гензеля, произнес Ганс.
+Кот подошел к миске, и, понюхав содержимое, принялся с аппетитом поглощать еду. Ганс вздохнул с облегчением и начал мыть свою тарелку. 
+-И противень,- сказала тетя Генриетта, услышав звук воды.
+Ганс кивнул и вымыл противень, а затем и тарелки родственников. Лишь после этого ему позволено было вернуться в свою комнату.
+Он лег на кровать, плотно закрыв глаза. Ганс думал о том, что ему бы хотелось оказаться где-нибудь далеко отсюда. Где-нибудь, где нет дяди с тетей, где Гензель не бросается на его ноги, где светит яркое солнце, где он улыбается, потому что ему весело. Ганс посмотрел на своих солдатиков, которые блестели в лунном свете. Как бы ему хотелось быть таким же сильным и храбрым, как его солдатики. Тогда бы никто не посмел его обидеть. Ганс мечтал отомстить всем своим врагам. Мальчик крепко стиснул зубы, сжал кулаки. С каждым днем он злился все больше. Он не понимал, почему именно ему приходится все это выносить. Почему именно его родители погибли в автокатастрофе, и почему именно он в ней выжил. Гансу было всего десять, он тоже хотел, чтобы отец играл с ним в снежки, а мама кормила вкусными пирогами. Но у него этого никогда не было, да и никогда не будет. 
+Ганс снял свой потрепанный серый свитерок, укутался в одеяло и попытался заснуть. Из гостиной стал доноситься громкий смех дяди и тети. Они смотрели комедийное шоу. Ганс знал, что в ближайший час ему не уснуть, поэтому достал свой карманный фонарик и начал читать о приключениях Оливера Твиста.
+
+        </p>
+
+        <p>
+        </p>
+    </div>
+</div>
+
 </body>
 </html>
