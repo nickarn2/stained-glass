@@ -1,135 +1,140 @@
 <!DOCTYPE html>
 <html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Витражи</title>
+    <head>
+        <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                <title>Витражи - Глава 1</title>
+                <link href='https://fonts.googleapis.com/css?family=Monomakh' rel='stylesheet'>
+                <link href='https://fonts.googleapis.com/css?family=Old Standard TT' rel='stylesheet'>
+                <style>
+                    /* Подключаем Monomakh и Old Standard TT из Google Fonts */
+                    @import url('fonts.googleapis.com');
 
-<link href='https://fonts.googleapis.com/css?family=Monomakh' rel='stylesheet'>
+                    body {
+                        background-color: #dfd3c3;
+                        background-image: url('www.transparenttextures.com');
+                        font-family: 'Old Standard TT', serif;
+                        color: #2c2c2c;
+                        line-height: 1.4;
+                        margin: 0;
+                        padding: 15px;
+                    }
 
-    <style>
-        /* Стиль фона и газетного листа */
-        body {
-            background-color: #f4ecd8; /* Цвет старой бумаги */
-            font-family: "Times New Roman", serif;
-            display: flex;
-            justify-content: center;
-            padding: 20px;
-            margin: 0;
-        }
+                    .newspaper-container {
+                        max-width: 800px;
+                        margin: 0 auto;
+                        border: 1px solid rgba(0,0,0,0.2);
+                        padding: 15px;
+                        box-shadow: 0 0 20px rgba(0,0,0,0.1);
+                    }
 
-        .paper {
-            max-width: 900px;
-            background: #dfd3c3;
-            padding: 40px;
-            box-shadow: 0 0 20px rgba(0,0,0,0.2);
-            border: 1px solid #c4b5a2;
-        }
+                    /* Заголовок теперь на шрифте Monomakh */
+                    h1 {
+                        font-family: 'Monomakh', serif;
+                        text-align: center;
+                        font-size: 3.5rem;
+                        /* Monomakh сам по себе очень декоративен,
+                         убираем uppercase для сохранения стиля полуустава */
+                        margin: 0;
+                        padding-top: 10px;
+                        font-weight: normal;
+                    }
 
-        h1 {
-            text-align: center;
-            font-size: clamp(40px, 8vw, 70px);
-            text-transform: uppercase;
-            border-bottom: 5px double #2c2c2c;
-            margin-bottom: 20px;
-            letter-spacing: 2px;
-        }
+                    .subtitle {
+                        font-family: 'Monomakh', serif;
+                        text-align: center;
+                        font-size: 1.8rem;
+                        border-bottom: 3px double #000;
+                        margin-bottom: 20px;
+                        padding-bottom: 10px;
+                    }
 
-        h2 {
-            /* Применяем Playfair Display SC */
-            font-family: 'Monomakh', serif;
-            text-align: center;
-            font-size: 4.5em;
-            margin: 0 0 20px 0;
-            text-transform: uppercase;
-            font-weight: 700; /* Жирный начертание */
-            
-            /* Классический газетный разделитель */
-            border-bottom: 2px solid #000;
-            border-top: 2px solid #000;
-            padding: 10px 0;
-            letter-spacing: 3px;
-            color: #333;
-        }
+                    .article {
+                        column-count: 1;
+                        text-align: justify;
+                        hyphens: auto;
+                    }
 
-        h3 {
-            font-family: 'Monomakh', serif;
-        }
+                    .article p {
+                        margin-top: 0;
+                        margin-bottom: 8px;
+                        text-indent: 15px;
+                    }
 
+                    .article p:first-of-type {
+                        text-indent: 0;
+                    }
 
-        /* Две колонки как в настоящей газете */
-        .columns {
-            column-count: 2;
-            column-gap: 30px;
-            column-rule: 1px solid #a3937b;
-        }
+                    .live-video {
+                        float: left;
+                        width: 45%;
+                        max-width: 250px;
+                        height: auto;
+                        margin-right: 15px;
+                        margin-bottom: 5px;
+                        filter: sepia(0.5) contrast(1.1) grayscale(0.4);
+                        border: 5px solid #333;
+                        outline: 1px solid #333;
+                        outline-offset: 3px;
+                    }
 
-        /* Контейнер для "живого фото" */
-        .live-photo {
-            float: left; /* Текст обтекает видео */
-            width: 200px;
-            height: 300px;
-            margin: 5px 15px 10px 0;
-            border: 4px solid #333;
-            background: #000;
-            overflow: hidden;
-            filter: sepia(0.5) contrast(1.2); /* Эффект старой пленки */
-        }
+                    .first-letter {
+                        float: left;
+                        font-size: 3.5rem;
+                        line-height: 0.8;
+                        padding-right: 8px;
+                        font-weight: bold;
+                        /* Буквицу тоже можно сделать в стиле Monomakh */
+                        font-family: 'Monomakh', serif;
+                    }
 
-        video {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
+                    @media (min-width: 600px) {
+                        h1 { font-size: 5rem; }
+                        .subtitle { font-size: 2.2rem; }
+                        .article { column-count: 2; column-gap: 30px; }
+                        body { padding: 40px; }
+                        .newspaper-container { padding: 30px; }
+                    }
+                </style>
+    </head>
+    <body>
 
-        p {
-            margin: 0;
-            line-height: 1.4;
-            text-align: justify;
-        }
-    </style>
-</head>
-<body>
+        <div class="newspaper-container">
+            <h1>Витражи</h1>
+            <div class="subtitle">Глава 1</div>
 
-<div class="paper">
-    <h2>Витражи</h2>
-    
-    <div class="columns">
-        <p>
-            <span class="live-photo">
-                <!-- Прямая ссылка на тестовое видео. Замените на свое. -->
-                <video autoplay muted loop playsinline>
+            <div class="article">
+                <video class="live-video" autoplay muted loop playsinline>
                     <source src="p-01-2.mp4" type="video/mp4">
                 </video>
-            </span>
-            <h3><b>Глава 1</b></h3>
-        </p>
-        
-<p>Шумные улицы города стали потихоньку смолкать, зажигались фонари, звезды отчетливее проявлялись на небе. Иногда тучи заслоняли небесные светила, и маленькому Гансу требовался фонарик, чтобы в его комнате было не слишком темно и страшно. Мальчик лепил солдатиков из украденной в школе глины. Он расставлял их на подоконнике и дожидался, пока они высохнут, а потом разукрашивал. Злые солдатики были всегда в бордовой форме, а добрые - в серой. Ганс аккуратно выстраивал их ровными рядами на подоконнике, бросая иногда тоскливый взгляд на улицу, где дети возвращались со своими родителями с ледовых катков, а кто-то мастерил снеговиков или играл в снежки.</p>
 
-<p>-Ужинать! - раздался из гостинной комнаты грозный голос дяди Фредрика.</p>
+                <p><span class="first-letter">Ш</span>умные улицы города стали потихоньку смолкать, зажигались фонари, звезды отчетливее проявлялись на небе. Иногда тучи заслоняли небесные светила, и маленькому Гансу требовался фонарик, чтобы в его комнате было не слишком темно и страшно. Мальчик лепил солдатиков из украденной в школе глины. Он расставлял их на подоконнике и дожидался, пока они высохнут, а потом разукрашивал. Злые солдатики были всегда в бордовой форме, а добрые - в серой. Ганс аккуратно выстраивал их ровными рядами на подоконнике, бросая иногда тоскливый взгляд на улицу, где дети возвращались со своими родителями с ледовых катков, а кто-то мастерил снеговиков или играл в снежки.</p>
 
-<p>Ганс тяжело вздохнул, от чего стекло запотело, скрывая заснеженную улицу. Мальчик медленно направился на кухню.</p>
+                <p>-Ужинать! - раздался из гостинной комнаты грозный голос дяди Фредрика.</p>
 
-<p>-Ты датский король?! Почему мы с тетей должны тебя так долго ждать? - закричал на него дядя Фредрик, когда Ганс сел за стол.</p>
+                <p>Ганс тяжело вздохнул, от чего стекло запотело, скрывая заснеженную улицу. Мальчик медленно направился на кухню.</p>
 
-<p>За годы, проведенные в этом доме, мальчик понял, что порой лучше промолчать, поэтому ничего не ответил.</p>
+                <p>-Ты датский король?! Почему мы с тетей должны тебя так долго ждать? - закричал на него дядя Фредрик, когда Ганс сел за стол.</p>
 
-<p>-Ты всегда был неблагодарным! - упрекнул его дядя Фредрик.</p>
+                <p>За годы, проведенные в этом доме, мальчик понял, что порой лучше промолчать, поэтому ничего не ответил.</p>
 
-<p>Ганс закрыл глаза и на секунду представил, как его серые солдатики атакуют бордовых, как он ведет их вперед сражаться, и они побеждают, принимают поздравления. На губах мальчика появилась улыбка.</p>
+                <p>-Ты всегда был неблагодарным! - упрекнул его дядя Фредрик.</p>
 
-<p>-Чего улыбаешься? - подозрительно спросил дядя Фредрик.</p>
+                <p>Ганс закрыл глаза и на секунду представил, как его серые солдатики атакуют бордовых, как он ведет их вперед сражаться, и они побеждают, принимают поздравления. На губах мальчика появилась улыбка.</p>
 
-<p>-Я? - испуганно произнес Ганс.</p>
+                <p>-Чего улыбаешься? - подозрительно спросил дядя Фредрик.</p>
 
-<p>Это была неосознанная улыбка, по-другому бывало слишком редко.</p>
+                <p>-Я? - испуганно произнес Ганс.</p>
 
-<p>-Ешь, - сказала тетя Генриетта, поставив перед Гансом тарелку с ужином.</p>
+                <p>Это была неосознанная улыбка, по-другому бывало слишком редко.</p>
 
-<p>Мальчик медленно ковырял в тарелке вилкой. Ему никогда не нравилось, как готовит тетя: еда была слишком жирной и соленой. Но она нравилась дяде Фредрику. Ганс не любил бобовые, но семья Хольмберг их ела каждый день. И ему через силу приходилось заставлять себя съесть хоть половину своей порции, иначе дядя Фредрик бы сильно разозлился. Не обращая внимания на Ганса, муж с женой разговаривали о своих семейных делах. Воспользовавшись этим, мальчик спрыгнул со стула, быстро поблагодарил за ужин и выкинул оставшуюся половину порции коту Гензелю. Кот тихо зашипел - он любил только тетю Генриетту. Остальным же частенько доставалось от него. У Ганса все ноги были в.</p>
-    </div>
-</div>
+                <p>-Ешь, - сказала тетя Генриетта, поставив перед Гансом тарелку с ужином.</p>
 
-</body>
+                <p>Мальчик медленно ковырял в тарелке вилкой. Ему никогда не нравилось, как готовит тетя: еда была слишком жирной и соленой. Но она нравилась дяде Фредрику. Ганс не любил бобовые, но семья Хольмберг их ела каждый день. И ему через силу приходилось заставлять себя съесть хоть половину своей порции, иначе дядя Фредрик бы сильно разозлился. Не обращая внимания на Ганса, муж с женой разговаривали о своих семейных делах. Воспользовавшись этим, мальчик спрыгнул со стула, быстро поблагодарил за ужин и выкинул оставшуюся половину порции коту Гензелю. Кот тихо зашипел - он любил только тетю Генриетту. Остальным же частенько доставалось от него. </p>
+
+
+            </div>
+        </div>
+
+    </body>
 </html>
